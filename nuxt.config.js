@@ -15,7 +15,10 @@ export default {
   generate: {
     routes() {
       return cdaClient
-        .getEntries(ctfConfig.CTF_BLOG_POST_TYPE_ID)
+        .getEntries({
+          content_type: ctfConfig.CTF_BLOG_POST_TYPE_ID,
+          order: '-sys.createdAt'
+        })
         .then(entries => {
           return [...entries.items.map(entry => `/blog/${entry.fields.slug}`)]
         })
