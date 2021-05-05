@@ -18,8 +18,13 @@ export default {
         .getEntries({
           content_type: ctfConfig.CTF_BLOG_POST_TYPE_ID
         })
-        .then(entries => {
-          return [...entries.items.map(entry => `/blog/${entry.fields.slug}`)]
+        .then((entries) => {
+          return entries.items.map((entry) => {
+            return {
+              route: `/blog/${entry.fields.slug}`,
+              payload: entry
+            }
+          })
         })
     }
   },

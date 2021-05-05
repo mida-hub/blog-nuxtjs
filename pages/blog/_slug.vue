@@ -63,7 +63,8 @@ export default {
     }
   },
   transition: 'slide-right',
-  async asyncData({ env, params }) {
+  async asyncData({params, payload}) {
+    if (payload) return { article: payload }
     return await client
       .getEntry(params.sys)
       .then(entry => {
