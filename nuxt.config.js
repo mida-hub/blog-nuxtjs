@@ -61,7 +61,11 @@ export default {
       mode: 'client'
     },
     {
-      src:'~/plugins/markdown-it-vue.js',
+      src: '~/plugins/markdown-it-vue.js',
+      mode: 'client'
+    },
+    {
+      src: '~/plugins/contentful.js',
       mode: 'client'
     }
   ],
