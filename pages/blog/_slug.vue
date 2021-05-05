@@ -34,9 +34,9 @@
     </v-col>
   </v-row>
 </template>
+
 <script>
 import { createClient } from '~/plugins/contentful.js'
-import MarkdownItVue from 'markdown-it-vue'
 import 'markdown-it-vue/dist/markdown-it-vue.css'
 
 const client = createClient()
@@ -46,9 +46,6 @@ export default {
       type: String,
       default: ''
     }
-  },
-  components: {
-    MarkdownItVue
   },
   data () {
     return {
@@ -70,7 +67,7 @@ export default {
     return await client
       .getEntry(params.sys)
       .then(entry => {
-        console.log(params.sys)
+        // console.log(params.sys)
         return {
           article: entry
         }

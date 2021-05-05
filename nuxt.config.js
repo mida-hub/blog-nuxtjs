@@ -16,8 +16,7 @@ export default {
     routes() {
       return cdaClient
         .getEntries({
-          content_type: ctfConfig.CTF_BLOG_POST_TYPE_ID,
-          order: '-sys.createdAt'
+          content_type: ctfConfig.CTF_BLOG_POST_TYPE_ID
         })
         .then(entries => {
           return [...entries.items.map(entry => `/blog/${entry.fields.slug}`)]
@@ -52,11 +51,19 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    '~/static/normalize.css'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    '~/plugins/filter.js'
+    {
+      src: '~/plugins/filter.js',
+      mode: 'client'
+    },
+    {
+      src:'~/plugins/markdown-it-vue.js',
+      mode: 'client'
+    }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
