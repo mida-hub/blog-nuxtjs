@@ -36,6 +36,7 @@ export default {
 
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
+  ssr: false,
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -115,6 +116,6 @@ export default {
         options.loose = true;
       }
     },
-    analyze: true
+    // analyze: true
   }
 }
