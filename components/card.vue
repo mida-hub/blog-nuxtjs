@@ -64,15 +64,3 @@ export default {
   }
 }
 </script>
-
-
-<style scoped>
-  a,
-  a:visited,
-  a:hover,
-  a:active {
-    color: inherit;
-    text-decoration: none;
-    border-bottom: 1.2px solid;
-  }
-</style>
