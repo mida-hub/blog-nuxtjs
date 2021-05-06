@@ -25,8 +25,3 @@ export default {
   }
 }
 </script>
-
-<style>
-@import '../static/normalize.css';
-
-</style>

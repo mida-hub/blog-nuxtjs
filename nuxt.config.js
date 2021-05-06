@@ -62,10 +62,6 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     {
-      src: '~/plugins/filter.js',
-      mode: 'client'
-    },
-    {
       src: '~/plugins/markdown-it-vue.js',
       mode: 'client'
     },
@@ -118,6 +114,7 @@ export default {
       presets({ isServer }, [ preset, options ]) {
         options.loose = true;
       }
-    }
+    },
+    analyze: true
   }
 }

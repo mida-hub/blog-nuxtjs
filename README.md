@@ -4,7 +4,6 @@
 ```
 npm init nuxt-app blog-nuxtjs
 npm install --dev contentful
-npm install moment @nuxtjs/moment
 npm install markdown-it-vue
 ```
 

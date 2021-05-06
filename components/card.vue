@@ -11,10 +11,10 @@
         </v-card-title>
         <v-card-subtitle>
           <div class="font-weight-light">
-            created : {{ createdAt | dateFormat }}
+            created : {{ createdAt}}
           </div>
           <div class="font-weight-light">
-            updated : {{ updatedAt | dateFormat }}
+            updated : {{ updatedAt}}
           </div>
           <span class="font-weight-light">
             tags : 
