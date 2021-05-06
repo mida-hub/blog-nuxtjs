@@ -10,7 +10,9 @@
         <v-card-subtitle>
           <div class="font-weight-light">
             created : {{ article.fields.createdAt | dateFormat }}
-            / updated : {{ article.fields.updatedAt | dateFormat }}
+          </div>
+          <div class="font-weight-light">
+            updated : {{ article.fields.updatedAt | dateFormat }}
           </div>
           <span class="font-weight-light">
             tags : 
