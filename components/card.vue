@@ -4,9 +4,7 @@
       <v-card outlined>
         <v-card-title>
           <nuxt-link
-            :to="{ name: 'blog-slug', params: {
-              sys: id
-            }}"
+            :to="{path: '/post/' + slug}"
           >
             {{ title }}
           </nuxt-link>
@@ -36,6 +34,10 @@
 export default {
   props: {
     id: {
+      type: String,
+      default: ''
+    },
+    slug: {
       type: String,
       default: ''
     },

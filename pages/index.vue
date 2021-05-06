@@ -5,6 +5,7 @@
         v-for="(post, i) in posts"
         :key="i"
         :id="post.sys.id"
+        :slug="post.fields.slug"
         :title="post.fields.title"
         :tags="post.fields.tags"
         :abstract="post.fields.abstract"

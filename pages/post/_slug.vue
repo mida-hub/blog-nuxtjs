@@ -63,14 +63,18 @@ export default {
     }
   },
   transition: 'slide-right',
-  async asyncData({params, payload}) {
+  async asyncData({env, params, payload}) {
     if (payload) return { article: payload }
+    // console.log(params)
     return await client
-      .getEntry(params.sys)
-      .then(entry => {
-        // console.log(params.sys)
+      .getEntries({
+        content_type: env.CTF_BLOG_POST_TYPE_ID,
+        'fields.slug': params.slug
+      })
+      .then(entries => {
+        // console.log(entries)
         return {
-          article: entry
+          article: entries.items[0]
         }
       })
       .catch(console.error)

@@ -21,7 +21,7 @@ export default {
         .then((entries) => {
           return entries.items.map((entry) => {
             return {
-              route: `/blog/${entry.fields.slug}`,
+              route: `/post/${entry.fields.slug}`,
               payload: entry
             }
           })
@@ -36,6 +36,7 @@ export default {
 
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
+  mode: 'universal',
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
