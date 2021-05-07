@@ -39,7 +39,8 @@
 
 <script>
 import { createClient } from '~/plugins/contentful.js'
-import 'markdown-it-vue/dist/markdown-it-vue.css'
+// import 'markdown-it-vue/dist/markdown-it-vue.css'
+import 'markdown-it-vue/dist/markdown-it-vue-light.css'
 
 const client = createClient()
 export default {

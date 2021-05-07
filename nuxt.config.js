@@ -11,6 +11,8 @@ const ctfConfig = getConfigForKeys([
 const { createClient } = require('./plugins/contentful.js')
 const cdaClient = createClient(ctfConfig)
 
+const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
+
 export default {
   generate: {
     routes() {
@@ -82,13 +84,15 @@ export default {
     '@nuxtjs/moment',
   ],
 
-  moment: {
-    locales: ['ja']
-  },
-
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
   ],
+
+  configureWebpack: {
+    plugins: [
+      new VuetifyLoaderPlugin()
+    ],
+  },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
