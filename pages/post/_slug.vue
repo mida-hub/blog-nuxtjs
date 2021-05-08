@@ -24,7 +24,13 @@
           </span>
         </v-card-subtitle>
         <v-divider></v-divider>
-        <v-card-text> {{ article.fields.abstract }} </v-card-text>
+        <v-card-text>
+          <markdown-it-vue 
+            class="md-body" 
+            :content=article.fields.abstract
+            :options="options"  
+          />
+        </v-card-text>
         <v-card-text>
           <markdown-it-vue 
             class="md-body" 

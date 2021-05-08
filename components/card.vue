@@ -26,7 +26,13 @@
           </span>
         </v-card-subtitle>
         <v-divider></v-divider>
-        <v-card-text> {{ abstract }} </v-card-text>
+        <v-card-text>
+          <markdown-it-vue 
+            class="md-body" 
+            :content=abstract
+            :options="options"  
+          />
+        </v-card-text>
       </v-card>
     </v-col>
   </v-row>
