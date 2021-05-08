@@ -3,9 +3,9 @@
     <v-col cols="10">
       <v-card outlined>
         <v-card-title>
-          <h1>
+          <h2>
             {{ article.fields.title }}
-          </h1>
+          </h2>
         </v-card-title>
         <v-card-subtitle>
           <div class="font-weight-light">
