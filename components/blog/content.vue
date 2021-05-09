@@ -1,9 +1,12 @@
 <template>
-  <markdown-it-vue 
-    class="md-body" 
-    :content=content
-    :options="options"  
-  />
+  <div>
+    <br>
+    <markdown-it-vue 
+      class="md-body" 
+      :content=content
+      :options="options"  
+    />
+  </div>
 </template>
 
 <script>
