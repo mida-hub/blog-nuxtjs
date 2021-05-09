@@ -5,7 +5,8 @@ const { getConfigForKeys } = require('./lib/config.js')
 const ctfConfig = getConfigForKeys([
   'CTF_BLOG_POST_TYPE_ID',
   'CTF_SPACE_ID',
-  'CTF_CDA_ACCESS_TOKEN'
+  'CTF_CDA_ACCESS_TOKEN',
+  'CTF_URL'
 ])
 
 const { createClient } = require('./plugins/contentful.js')
@@ -33,7 +34,8 @@ export default {
   env: {
     CTF_SPACE_ID: ctfConfig.CTF_SPACE_ID,
     CTF_CDA_ACCESS_TOKEN: ctfConfig.CTF_CDA_ACCESS_TOKEN,
-    CTF_BLOG_POST_TYPE_ID: ctfConfig.CTF_BLOG_POST_TYPE_ID
+    CTF_BLOG_POST_TYPE_ID: ctfConfig.CTF_BLOG_POST_TYPE_ID,
+    CTF_URL: ctfConfig.CTF_URL
   },
 
   // Target: https://go.nuxtjs.dev/config-target
