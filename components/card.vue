@@ -6,32 +6,18 @@
           <nuxt-link
             :to="{path: '/post/' + slug}"
           >
-            {{ title }}
+            <Title :title="title" />
           </nuxt-link>
         </v-card-title>
         <v-card-subtitle>
-          <div class="font-weight-light">
-            created : {{ createdAt}}
-          </div>
-          <div class="font-weight-light">
-            updated : {{ updatedAt}}
-          </div>
-          <span class="font-weight-light">
-            tags : 
-          </span>
-          <span
-            class="font-weight-light"
-            v-for="tag in tags" v-bind:key="tag.sys.id">
-              [ {{ tag.fields.title }} ]
-          </span>
+          <CreatedAt :createdAt="createdAt" />
+          <UpdatedAt :updatedAt="updatedAt" />
+          <Tags :tags="tags" />
         </v-card-subtitle>
         <v-divider></v-divider>
         <v-card-text>
-          <markdown-it-vue 
-            class="md-body" 
-            :content=abstract
-            :options="options"  
-          />
+          <Abstract :abstract="abstract" />
+          <Content :content="content" />
         </v-card-text>
       </v-card>
     </v-col>
@@ -39,7 +25,22 @@
 </template>
 
 <script>
+import Title from '~/components/blog/title.vue'
+import CreatedAt from '~/components/blog/createdat.vue'
+import UpdatedAt from '~/components/blog/updatedat.vue'
+import Tags from '~/components/blog/tags.vue'
+import Abstract from '~/components/blog/abstract.vue'
+import Content from '~/components/blog/content.vue'
+
 export default {
+  components: {
+    Title,
+    CreatedAt,
+    UpdatedAt,
+    Tags,
+    Abstract,
+    Content
+  },  
   props: {
     id: {
       type: String,
@@ -58,6 +59,10 @@ export default {
       default: []
     },
     abstract: {
+      type: String,
+      default: ''
+    },
+    content: {
       type: String,
       default: ''
     },
@@ -81,6 +86,12 @@ export default {
   a:active {
     color: inherit;
     text-decoration: none;
+  }
+
+  .link-underline {
     border-bottom: 1.2px solid;
+    padding-bottom: 2px;
+    display: inline;
+    line-height: 1.2;
   }
 </style>
